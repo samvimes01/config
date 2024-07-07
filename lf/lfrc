@@ -1,0 +1,75 @@
+#set previewer lf-ueberzug-previewer
+#set cleaner lf-ueberzug-cleaner
+
+# Basic Settings
+set hidden true
+set ignorecase true
+set icons true
+
+# Custom Functions
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd trash ${{
+  read -p "Are you sure? " -n 1 -r
+  echo    # (optional) move to a new line
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    trash "$f"
+  fi
+}}
+
+
+# Bindings
+map d
+map m
+
+map dd trash
+map mf mkfile
+map md mkdir
+
+map au unarchive
+map <enter> open
+map R reload
+
+# Overwrites
+map . set hidden!
+map p paste
+map x cut
+#map c copy
+#map C clear
+
+# Open
+map gd $codium "."
+map gO $codium ~/dotfiles
+map gf $zed "$f"
+map e  $nvim "$f"
+
+# Movement
+map gD cd ~/Downloads
+map gw cd ~/workspace
+map gc cd ~/.config
+map gss cd ~/workspace/simplex
+map gst cd ~/workspace/simplex/timesheets-ui-monorepo
+#map gs cd ~/.local/bin
