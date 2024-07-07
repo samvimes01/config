@@ -5,12 +5,25 @@
 local M = {}
 
 M.ui = {
-	theme = "onedark",
-  theme_toggle = { "onedark", "one_light" },
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+	theme = "github_light",
+  theme_toggle = { "palenight", "github_light" },
+
+	hl_override = {
+	  Comment = { italic = true },
+		["@comment"] = { italic = true },
+    DiffChange = {
+      bg = "#464414",
+      fg = "none",
+    },
+    DiffAdd = {
+      bg = "#103507",
+      fg = "none",
+    },
+    DiffRemoved = {
+      bg = "#461414",
+      fg = "none",
+    },
+	},
 }
 
 return M
