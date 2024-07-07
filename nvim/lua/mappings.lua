@@ -4,6 +4,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 map("n", "ZZ", "<cmd>q<CR>", { desc = "Quit" })
@@ -14,8 +15,6 @@ end, { desc = "Close All Buffers" })
 
 map("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find Todo" })
-
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Trouble
 -- map("n", "<leader>qx", "<cmd>TroubleToggle<CR>", { desc = "Open Trouble" })
@@ -66,3 +65,4 @@ map("n", "<leader>gl", ":Flog<CR>", { desc = "Git Log" })
 map("n", "<leader>gf", ":DiffviewFileHistory<CR>", { desc = "Git Diff History" })
 map("n", "<leader>gc", ":DiffviewOpen HEAD~1<CR>", { desc = "Git Last Commit" })
 map("n", "<leader>gt", ":DiffviewToggleFile<CR>", { desc = "Toggle Log" })
+map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
