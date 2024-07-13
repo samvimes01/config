@@ -28,7 +28,7 @@ return {
         "js-debug-adapter",
         "typescript-language-server",
         "angular-language-server",
-        "prettier",
+        -- "prettier",
         "prettierd",
         -- "eslint",
         -- "eslint_d",
@@ -240,33 +240,33 @@ return {
     end,
   },
   { "f-person/git-blame.nvim", lazy = false },
--- git
+  -- git
   {
-  "kdheepak/lazygit.nvim",
-  cmd = {
-    "LazyGit",
-    "LazyGitConfig",
-    "LazyGitCurrentFile",
-    "LazyGitFilter",
-    "LazyGitFilterCurrentFile",
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    },
   },
-  -- optional for floating window border decoration
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
-  -- setting the keybinding for LazyGit with 'keys' is recommended in
-  -- order to load the plugin when the command is run for the first time
-  keys = {
-    { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-  }
-},
   { "tpope/vim-fugitive" },
   { "rbong/vim-flog", dependencies = {
     "tpope/vim-fugitive",
   }, lazy = false },
   { "sindrets/diffview.nvim", lazy = false },
 
-  -- easy navigation  
+  -- easy navigation
   {
     "ggandor/leap.nvim",
     lazy = false,

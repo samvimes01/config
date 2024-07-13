@@ -62,7 +62,10 @@ end, { desc = "Step Over" })
 
 -- Git
 map("n", "<leader>gl", ":Flog<CR>", { desc = "Git Log" })
-map("n", "<leader>gf", ":DiffviewFileHistory<CR>", { desc = "Git Diff History" })
-map("n", "<leader>gc", ":DiffviewOpen HEAD~1<CR>", { desc = "Git Last Commit" })
+map("n", "<leader>gf", ":DiffviewFileHistory<CR>", { desc = "Git File History" })
+map("n", "<leader>gv", ":DiffviewOpen<CR>", { desc = "Git Diff" })
 map("n", "<leader>gt", ":DiffviewToggleFile<CR>", { desc = "Toggle Log" })
 map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
+
+-- Telescope
+map("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", { desc = "telescope find files" })
