@@ -1,7 +1,10 @@
-[manager]
+[mgr]
 prepend_keymap = [
-	{ on = [ "g", "v" ], run = "shell 'codium .' enter", desc = "Open codium" },
-	{ on = [ "g", "n" ], run = 'shell nvim enter', desc = "Open neovim" },
+	{ on = [ "g", "v" ], run = "shell --confirm 'windsurf .'", desc = "Open code" },
+	{ on = [ "g", "l" ], run = "shell --confirm 'lazygit'", desc = "Lazygit" },
+  #	{ on = [ "g", "d" ], run = "shell --confirm 'lazydocker'", desc = "Lazydocker" },
+	{ on = [ "g", "p" ], run = "cd ~/Library/CloudStorage/ProtonDrive-oleks.ko@pm.me/", desc = "Open protondrive" },
+	# { on = [ "g", "n" ], run = 'shell nvim enter', desc = "Open neovim" },
 	{ on = [ "g", "w" ], run = 'cd ~/workspace', desc = "Go to workspace" },
 	{ on = [ "g", "s" ], run = 'cd ~/workspace/simplex', desc = "Go to simplex" },
 ]

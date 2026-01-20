@@ -79,6 +79,16 @@ return {
   },
 
   {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+  },
+  {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
     config = function()

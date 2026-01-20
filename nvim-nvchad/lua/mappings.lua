@@ -8,10 +8,28 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 map("n", "ZZ", "<cmd>q<CR>", { desc = "Quit" })
-map("n", "<leader>ww", "<cmd>w<CR>", { desc = "Save" })
+map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save" })
 map("n", "<leader>cx", function()
   require("nvchad.tabufline").closeAllBufs()
 end, { desc = "Close All Buffers" })
+
+-- Move lines
+map("v", "K", ":m '<-2<CR>gv=gv")
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("n", "J", ":m .+1<CR>==")
+
+-- Select all
+map("n", "<C-a>", "gg<S-v>G")
+
+-- Save
+map("n", "<C-s>", ":w<CR>")
+
+-- Tmux
+map("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "TmuxNavigateLeft" })
+map("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "TmuxNavigateDown" })
+map("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "TmuxNavigateUp" })
+map("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "TmuxNavigateRight" })
+map("n", "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "TmuxNavigatePrevious" })
 
 map("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find Todo" })

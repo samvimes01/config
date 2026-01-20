@@ -1,0 +1,12 @@
+return {
+  "neovim/nvim-lspconfig",
+  opts = {
+    -- The server name might be 'tsserver' or 'vtsls' depending on your LazyVim version and configuration.
+    -- Check :LspInfo for the exact name. We'll use a generic approach here.
+    servers = {
+      vtsls = {
+        filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+      },
+    },
+  },
+}

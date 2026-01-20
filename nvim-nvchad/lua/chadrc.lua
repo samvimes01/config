@@ -4,7 +4,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
   theme = "github_light",
   theme_toggle = { "github_light", "catppuccin" },
 
@@ -24,7 +24,9 @@ M.ui = {
       fg = "none",
     },
   },
+}
 
+M.ui = {
   nvdash = {
     load_on_startup = true,
 
